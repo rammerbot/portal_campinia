@@ -1,0 +1,78 @@
+ {% load static %}
+ <!-- FOOTER -->
+ <footer data-stellar-background-ratio="5">
+     <div class="container">
+          <div class="row">
+
+               <div class="col-md-4 col-sm-4">
+                    <div class="footer-thumb"> 
+                         <h4 class="wow fadeInUp" data-wow-delay="0.4s">Informacion de contacto</h4>
+                         <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p>
+
+                         <div class="contact-info">
+                              <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                              <p><i class="fa fa-envelope-o"></i> <a href="#">info@company.com</a></p>
+                         </div>
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-4"> 
+                    <div class="footer-thumb"> 
+                         <h4 class="wow fadeInUp" data-wow-delay="0.4s">Ultimas noticias</h4>
+                         {% for new in latest_news %}
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="{%url 'home:news' new.slug%}"><img src="{{new.photo.url}}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="{%url 'home:news' new.slug%}"><h5>{{new.title}}</h5></a>
+                                        <span>{{new.created_at.date}}</span>
+                                   </div>
+                              </div>
+                         {% endfor %}
+                    </div>
+               </div>
+
+               <div class="col-md-4 col-sm-4"> 
+                    <div class="footer-thumb">
+                         <div class="opening-hours">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Horario de atencion</h4>
+                              <p>Lunes - Viernes <span>06:00 AM - 10:00 PM</span></p>
+                              <p>Sabados <span>09:00 AM - 08:00 PM</span></p>
+                              <p>Domingo <span>Cerrado</span></p>
+                         </div> 
+
+                         <ul class="social-icon">
+                              <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                              <li><a href="#" class="fa fa-twitter"></a></li>
+                              <li><a href="#" class="fa fa-instagram"></a></li>
+                         </ul>
+                    </div>
+               </div>
+
+               <div class="col-md-12 col-sm-12 border-top">
+                    <div class="col-md-4 col-sm-6">
+                         <div class="copyright-text"> 
+                              <p>Copyright &copy; RammerBot 2023 
+                              
+                              | Desarrollo de Software</p>
+                         </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                         <div class="footer-link"> 
+                              <a href="#">Atencion</a>
+                              <a href="#">Reportes</a>
+                              <a href="#">Noticias</a>
+                              <a href="#">Actualidad</a>
+                         </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 text-align-center">
+                         <div class="angle-up-btn"> 
+                             <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                         </div>
+                    </div>   
+               </div>
+               
+          </div>
+     </div>
+</footer>
