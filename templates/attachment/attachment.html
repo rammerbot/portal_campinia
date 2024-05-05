@@ -5,4 +5,40 @@
 {% block content %}
 {% include "includes/header_n.html" %}
 
+   <!-- ATTACHMENT -->
+   <section id="news" data-stellar-background-ratio="2.5">
+    <div class="container">
+         <div class="row">
+
+              <div class="col-md-12 col-sm-12">
+                   <!-- SECTION TITLE -->
+                   <div class="section-title wow fadeInUp" data-wow-delay="0.1s">
+                        <h2>Proximas Jornadas</h2>
+                   </div>
+              </div>
+              {% for jornada in attachments %}
+                   <div class="col-md-4 col-sm-6 " style="margin-top:20px">
+                        <!-- NEWS THUMB -->
+                        <div class="news-thumb wow fadeInUp shadow_card" data-wow-delay="0.4s">
+                             <a href="{%url 'home:attachment' jornada.slug%}">
+                                  <img src="{{jornada.photo.url}}" class="img-responsive" alt="">
+                             </a>
+                             <div class="news-info">
+                                  <span>{{jornada.date}}</span>
+                                  <h3><a href="{%url 'home:attachment' jornada.slug%}">{{jornada.title}}</a></h3>
+                                  <p>{{jornada.description|truncatechars:70}}</p>
+                                  <div class="author">
+                                       <div class="author-info">
+                                            <h5>{{jornada.author}}</h5>
+                                       </div>
+                                  </div>
+                             </div>
+                        </div>
+                   </div>
+              {% endfor %}
+
+         </div>
+    </div>
+</section>
+
 {% endblock content %}

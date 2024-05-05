@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% include "includes/header_n.html" %}
+{% block content %}
+
+     <!-- NEWS DETAIL -->
+     <section id="news-detail" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-8 col-sm-7">
+                         <!-- NEWS THUMB -->
+                         <div class="news-detail-thumb">
+                              <div class="news-image">
+                                   <img src="{{attachment.photo.url}}" class="img-responsive" alt="">
+                              </div>
+                              <h3>{{attachment.title}}</h3>
+                              <p>{{attachment.description}}</p>
+                             
+                              <div class="news-social-share">
+                                   <h4>Comparte este articulo</h4>
+                                        <a href="facebook.com" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>
+                                        <a href="twitter.com" class="btn btn-success"><i class="fa fa-twitter"></i>Twitter</a>
+                                        <a href="google.com" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google+</a>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-5">
+                         <div class="news-sidebar">
+                              <div class="news-author">
+                                   <h4>{{attachment.author}}</h4>
+                                   <p>Fecha de Jornada</p>
+                                   <p>{{attachment.created_at.date}}</p>
+                              </div>
+
+                              <div class="recent-post">
+                                   <h4>Proximas Jornadas</h4>
+                                   {% for jornada in attachments %}
+                                        <div class="media">
+                                             <div class="media-object pull-left">
+                                                  <a href="#"><img src="{{jornada.photo.url}}" class="img-responsive" alt=""></a>
+                                             </div>
+                                             <div class="media-body">
+                                                  <h4 class="media-heading"><a href="{%url 'home:attachment' jornada.slug%}">{{jornada.title}}</a></h4>
+                                                  <p>{{attachment.date}}</p>
+                                             </div>
+                                        </div>
+                                   {% endfor %}
+                              </div>
+
+                              <div class="news-ads sidebar-ads">
+                                   <h4>Sidebar Banner Ad</h4>
+                              </div>
+                         </div>
+                    </div>
+                    
+               </div>
+          </div>
+     </section>
+         
+
+{% endblock content %}

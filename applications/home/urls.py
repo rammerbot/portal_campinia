@@ -23,7 +23,8 @@ app_name = 'home'
 
 urlpatterns = [
     path('', views.HomeListView.as_view(), name='home'),
-    path('attachment', views.AttachmentDetail.as_view(), name='attachment'),
+    path('attachment/<slug>', views.AttachmentDetail.as_view(), name='attachment'),
+    path('attachments/', views.Attachmentlist.as_view(), name='attachments'),
     path('news/<slug>', views.NewsDetail.as_view(), name='news'),
   
 ]

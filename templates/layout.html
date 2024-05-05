@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 
      <title>{% block title %}{% endblock title %}</title>
@@ -22,25 +22,20 @@
      <link rel="stylesheet" href="{% static 'css/tooplate-style.css'%}">
 
 </head>
-<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+        <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+        {% include "includes/brand.html" %}
+        {% block content %}
 
-{% block content %}
-
-
-    <!-- SCRIPTS -->
-    <script src="{% static 'js/jquery.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/jquery.sticky.js'%}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js'%}"></script>
-    <script src="{% static 'js/wow.min.js'%}"></script>
-    <script src="{% static 'js/smoothscroll.js'%}"></script>
-    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
-    <script src="{% static 'js/custom.js'%}"></script>
-
-    
-
-{% endblock content %}
-{% include "includes/footer.html" %}
-
-</body>
+        {% endblock content %}
+        {% include "includes/footer.html" %}
+        <!-- SCRIPTS -->
+        <script src="{% static 'js/jquery.js'%}"></script>
+        <script src="{% static 'js/bootstrap.min.js'%}"></script>
+        <script src="{% static 'js/jquery.sticky.js'%}"></script>
+        <script src="{% static 'js/jquery.stellar.min.js'%}"></script>
+        <script src="{% static 'js/wow.min.js'%}"></script>
+        <script src="{% static 'js/smoothscroll.js'%}"></script>
+        <script src="{% static 'js/owl.carousel.min.js'%}"></script>
+        <script src="{% static 'js/custom.js'%}"></script>
+    </body>
 </html>

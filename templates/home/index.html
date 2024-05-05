@@ -5,6 +5,9 @@
 {% block content %}
 
 {% include "includes/header.html" %}
+
+      <!-- MESSAGE -->
+
      <!-- HOME -->
      <section id="home" class="slider" data-stellar-background-ratio="0.5">
           <div class="container">
@@ -56,8 +59,9 @@
                          <div class="about-info">
                               <h3 class="wow fadeInUp" data-wow-delay="0.6s">Bienvenidos al portal base de misiones Apacuana <br>Clap Bolivar y Zamora</h3>
                               <div class="wow fadeInUp" data-wow-delay="0.8s">
-                                   <p>Aenean luctus lobortis tellus, vel ornare enim molestie condimentum. Curabitur lacinia nisi vitae velit volutpat venenatis.</p>
-                                   <p>Sed a dignissim lacus. Quisque fermentum est non orci commodo, a luctus urna mattis. Ut placerat, diam a tempus vehicula.</p>
+                                   <p>Portal informativo sobre las actualidades y programas de nuestra Base, donde podras conocer quienes son tus lideres de calle y contactar con ellos, dejar tus inquietudes.</p>
+                                   <p>proponer ideas y mantener un enlace directo con quienes hacen vida en la comunidad, somos un espacio pensado en hacer llegar la informacion y no conforme con eso </p>
+                                   <p> tambien es la intencion de unificar y reducir distancias entre quienes hacemos vida en este hermoso sector. </p>
                               </div>
                               
                          </div>
@@ -91,6 +95,7 @@
                                         <p>{{new.description|truncatechars:70}}</p>
                                         <div class="author">
                                              <div class="author-info">
+                                                  <p>Autor</p>
                                                   <h5>{{new.author}}</h5>
                                              </div>
                                         </div>
@@ -124,11 +129,10 @@
                                              <h3>{{leader.name}} {{leader.last_name}}</h3>
                                              <p>{{leader.street}}</p>
                                              <div class="team-contact-info">
-                                                  <p><i class="fa fa-envelope-o"></i> <a href="#">{{leader.email}}</a></p>
+                                                  <p><i class="fa fa-envelope-o"></i>{{leader.email}}</p>
                                              </div>
                                              <ul class="social-icon">
-                                                  <li><a href="#" class="fa fa-linkedin-square"></a></li>
-                                                  <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                                  <li><a href="mailto:{{leader.email}}" class="fa fa-envelope-o"></a></li>
                                              </ul>
                                         </div>
 
@@ -151,7 +155,7 @@
 
                     <div class="col-md-6 col-sm-6">
                          <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="#">
+                         <form id="appointment-form" method="post" enctype="multipart/form-data">{% csrf_token %}
 
                               <!-- SECTION TITLE -->
                               <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
@@ -161,38 +165,33 @@
                               <div class="wow fadeInUp" data-wow-delay="0.8s">
                                    <div class="col-md-6 col-sm-6">
                                         <label for="name">Nombre</label>
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                                        {{form.name}}
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
-                                        <label for="email">Correo</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                        <label for="email">Apellido</label>
+                                        {{form.last_name}}
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
-                                        <label for="date">Select Date</label>
-                                        <input type="date" name="date" value="" class="form-control">
+                                        <label for="date">Correo</label>
+                                        {{form.email}}
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
-                                        <label for="select">Select Department</label>
-                                        <select class="form-control">
-                                             <option>General Health</option>
-                                             <option>Cardiology</option>
-                                             <option>Dental</option>
-                                             <option>Medical Research</option>
-                                        </select>
+                                        <label for="select">Telefono</label>
+                                        {{form.phone}}
                                    </div>
 
                                    <div class="col-md-12 col-sm-12">
-                                        <label for="telephone">Phone Number</label>
-                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
-                                        <label for="Message">Additional Message</label>
-                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
-                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
+                                        <label for="telephone">Calle</label>
+                                        {{form.street}}
+                                        <label for="Message">Mensaje</label>
+                                        {{form.message}}
+                                        <button type="submit" class="form-control" id="cf-submit" name="submit">Enviar Consulta</button>
                                    </div>
                               </div>
-                        </form>
+                         </form>
                     </div>
 
                </div>
@@ -210,15 +209,6 @@
 	-->
           <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1974.9756406485844!2d-63.5545597!3d8.1064434!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8dce875378c1b335%3A0xfc8198bd4b340704!2sbase%20de%20misiones%20apacuana!5e0!3m2!1ses!2sve!4v1714833392747!5m2!1ses!2sve" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
      </section>           
-    
 
-     <!-- SCRIPTS -->
-    <script src="{% static 'js/jquery.js'%}"></script>
-    <script src="{% static 'js/bootstrap.min.js'%}"></script>
-    <script src="{% static 'js/jquery.sticky.js'%}"></script>
-    <script src="{% static 'js/jquery.stellar.min.js'%}"></script>
-    <script src="{% static 'js/wow.min.js'%}"></script>
-    <script src="{% static 'js/smoothscroll.js'%}"></script>
-    <script src="{% static 'js/owl.carousel.min.js'%}"></script>
-    <script src="{% static 'js/custom.js'%}"></script>
+    
 {% endblock content %}
