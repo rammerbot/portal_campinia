@@ -3,6 +3,7 @@
 
 {% include "includes/header_n.html" %}
 {% block content %}
+{% include "includes/header_n.html" %}
 
      <!-- NEWS DETAIL -->
      <section id="news-detail" data-stellar-background-ratio="0.5">
@@ -20,9 +21,9 @@
                              
                               <div class="news-social-share">
                                    <h4>Comparte este articulo</h4>
-                                        <a href="facebook.com" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>
-                                        <a href="twitter.com" class="btn btn-success"><i class="fa fa-twitter"></i>Twitter</a>
-                                        <a href="google.com" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google+</a>
+                                   <a href="https://www.facebook.com/sharer/sharer.php?u=localhost:8000{%url 'home:attachment' attachment.slug %}" target="_blank" rel="noopener noreferrer" class="btn btn-primary"><i class="fa fa-facebook"></i>Facebook</a>
+                                   <a href="https://wa.me/?text=localhost:8000{%url 'home:attachment' attachment.slug %}" target="_blank" rel="noopener noreferrer" class="btn btn-success"><i class="fa fa-whatsapp"></i>whatsapp</a>
+                                   <a href="https://plus.google.com/share?url=localhost:8000{%url 'home:attachment' attachment.slug %}" target="_blank" rel="noopener noreferrer" class="btn btn-danger"><i class="fa fa-google-plus"></i>Google+</a>
                               </div>
                          </div>
                     </div>

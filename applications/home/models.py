@@ -22,7 +22,7 @@ class StreetLeader(TimestampedModel):
     street = models.TextField('Calle')
     phone = models.CharField('Telefono', max_length=20, unique=True)
     email = models.EmailField('Correo', unique=True)
-    photo = models.ImageField('Foto', upload_to='foto')
+    photo = models.ImageField('Foto', upload_to='leader')
     facebook = models.URLField('Facebook')
 
     class Meta:
@@ -39,7 +39,7 @@ class News(TimestampedModel):
     title = models.CharField('Titulo', max_length=200)
     description = models.TextField('Descripcion')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    photo = models.ImageField('Foto', upload_to='foto')
+    photo = models.ImageField('Foto', upload_to='news')
     slug = models.SlugField(editable=False, max_length=300)
   
 
@@ -85,7 +85,7 @@ class Attachment(TimestampedModel):
     description = models.TextField('Descripcion')
     date = models.DateField('Fecha de Jornada', null=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
-    photo = models.ImageField('Foto', upload_to='foto')
+    photo = models.ImageField('Foto', upload_to='attachment')
     slug = models.SlugField(editable=False, max_length=300)
   
 
