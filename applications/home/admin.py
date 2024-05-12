@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.contrib.auth.models import User
 from .models import News, StreetLeader, Contact, Attachment
 
 # Register your models here.
@@ -30,3 +30,12 @@ class AttachmentAdmin(admin.ModelAdmin):
         super().save_model(request, obj, form, change)
 
 admin.site.register(Attachment, AttachmentAdmin)
+
+class CustomUserAdmin(admin.ModelAdmin):
+
+    list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff')
+
+    readonly_fields = ('username', 'email', 'first_name', 'last_name', 'is_staff', 'password', 'user_permissions','last_login', 'is_superuser', 'date_joined')
+
+admin.site.unregister(User)
+admin.site.register(User, CustomUserAdmin)
