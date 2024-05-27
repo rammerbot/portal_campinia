@@ -23,7 +23,7 @@ git clone https://github.com/rammerbot/pet_hotel.git
 
 ## Pet Hotel
 <div align="center">
-<img src="https://github.com/rammerbot/files/blob/main/Captura%20de%20pantalla%202024-05-26%20182134.png?raw=true" align="center" style="width: 100%" />
+<img src="https://github.com/rammerbot/files/blob/main/Captura%20de%20pantalla%202024-05-26%20203427.png?raw=true" align="center" style="width: 100%" />
 </div>  
 <div align="center">Pet Hotel Portal </div>
 
