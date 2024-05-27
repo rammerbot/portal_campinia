@@ -1,7 +1,7 @@
 ##### Español:
 ### Portal Apacuana, La campiña  
 <div align="center">
-<img src="https://raw.githubusercontent.com/rammerbot/files/main/Captura%20de%20pantalla%202024-05-26%20182134.png?token=GHSAT0AAAAAACRF553ITT3OAW27XXQSAYOMZSTW2GQ" align="center" style="width: 100%" />
+<img src="https://github.com/rammerbot/files/blob/main/Captura%20de%20pantalla%202024-05-26%20182134.png?raw=true" align="center" style="width: 100%" />
 </div>  
   
 
@@ -118,7 +118,7 @@ git push origin feature/tu-funcionalidad
 
 ## Apacuana Web
 <div align="center">
-<img src="https://raw.githubusercontent.com/rammerbot/files/main/Captura%20de%20pantalla%202024-05-26%20182134.png?token=GHSAT0AAAAAACRF553ITT3OAW27XXQSAYOMZSTW2GQ" align="center" style="width: 100%" />
+<img src="https://github.com/rammerbot/files/blob/main/Captura%20de%20pantalla%202024-05-26%20182134.png?raw=true" align="center" style="width: 100%" />
 </div>  
 <div align="center">Apacuana Web page</div>
 
