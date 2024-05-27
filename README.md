@@ -116,11 +116,11 @@ git push origin feature/tu-funcionalidad
 
 ### English:
 
-## Caja System
+## Apacuana Web
 <div align="center">
 <img src="https://raw.githubusercontent.com/rammerbot/files/main/Captura%20de%20pantalla%202024-05-26%20182134.png?token=GHSAT0AAAAAACRF553ITT3OAW27XXQSAYOMZSTW2GQ" align="center" style="width: 100%" />
 </div>  
-<div align="center">System for Centralizing Daily Report Flow</div>
+<div align="center">Apacuana Web page</div>
 
  ### Description
  
